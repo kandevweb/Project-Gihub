@@ -39,5 +39,5 @@
 - Chạy lệnh `yarn build`
 
 ```
-Tác giả: kanisdev .
+Tác giả: kanisdev.
 ```
