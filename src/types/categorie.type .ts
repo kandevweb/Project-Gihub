@@ -1,5 +1,5 @@
 import { CategoriesAttributes } from '../db/models/Categorie'
 
-export interface Categories extends CategoriesAttributes {}
+export interface Category extends CategoriesAttributes {}
 
-export type CategoriesInput = Omit<Categories, 'category_id' | 'createdAt' | 'updatedAt'>
+export type CategoryInput = Omit<Category, 'category_id' | 'createdAt' | 'updatedAt'>
