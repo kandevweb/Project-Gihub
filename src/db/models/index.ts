@@ -1,6 +1,9 @@
 import User from './User'
 import Role from './Role'
 import Image from './Image'
+import Todo from './Todo'
+import Categories from './Categorie'
+import Gender from './Gender'
 
 // Role Relationships
 const roleRelationships = () => {
@@ -19,11 +22,21 @@ const userRelationships = () => {
   })
 }
 
+// Todo Relationships
+const todoRelationships = () => {
+  Todo.belongsTo(User, {
+    targetKey: 'user_id',
+    foreignKey: 'user_id',
+    as: 'user_data'
+  })
+}
+
 export const setupModelRelationships = () => {
   roleRelationships()
   userRelationships()
+  todoRelationships()
 }
 
-const models = { Role, User, Image }
+const models = { Role, User, Gender, Categories, Todo, Image }
 
 export default models

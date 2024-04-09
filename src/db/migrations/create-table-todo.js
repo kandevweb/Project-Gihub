@@ -22,8 +22,22 @@ module.exports = {
         type: Sequelize.BOOLEAN
       },
       user_id: {
-        allowNull: true,
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING,
+        references: {
+          model: 'Users',
+          key: 'user_id'
+        }
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       }
     })
   },
