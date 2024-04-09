@@ -2,6 +2,7 @@ import { CustomErrorHandler } from '../utils/ErrorHandling';
 import { StatusCodes } from 'http-status-codes';
 import { TodoAttributes } from '../db/models/Todo';
 import Todo from '../db/models/Todo';
+import { TodoInput } from '../types/todo.type';
 
 class TodoService {
   async getAllTodos() {
@@ -26,20 +27,7 @@ class TodoService {
     return { message: 'Thêm mới todo thành công', data: newTodo };
   }
 
-  async updateTodo(todoId: string, data: TodoAttributes) {
-    const { todo_name, description, completed, user_id } = data;
-
-    const updatedTodo = await Todo.update(
-      { todo_name, description, completed, user_id },
-      { where: { todo_id: todoId }, returning: true }
-    );
-
-    if (!updatedTodo[0]) {
-      throw new CustomErrorHandler(StatusCodes.NOT_FOUND, 'Không tìm thấy todo để cập nhật!');
-    }
-
-    return { message: 'Cập nhật todo thành công', data: updatedTodo[1][0] };
-  }
+  
 
   async deleteTodo(todoId: string) {
     const deletedRowCount = await Todo.destroy({ where: { todo_id: todoId } });
@@ -49,6 +37,15 @@ class TodoService {
     }
 
     return { message: 'Xóa todo thành công' };
+  }
+  async TodoDetail(todoId: string) {
+    const todoDetail = await Todo.findByPk(todoId);
+
+    if (!todoDetail) {
+      throw new CustomErrorHandler(StatusCodes.NOT_FOUND, 'Không tìm thấy todo!');
+    }
+
+    return { message: 'Lấy chi tiết todo thành công.', data: todoDetail };
   }
 }
 

@@ -6,7 +6,7 @@ const API_V1 = {
   role: `${V1}/role`,
   user: `${V1}/user`,
   todo: `${V1}/todo`,
-  cast: `${V1}/cast`
+  
 }
 
 const API_V2 = {

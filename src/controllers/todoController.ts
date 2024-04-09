@@ -3,6 +3,8 @@ import todoService from '../services/todoService';
 import { sendResponseSuccess } from '../utils/response';
 import { StatusCodes } from 'http-status-codes';
 import { CustomErrorHandler } from '../utils/ErrorHandling';
+import { TodoInput } from '../types/todo.type';
+import models from '../db/models';
 
 class TodoController {
   // Lấy danh sách todo
@@ -11,41 +13,42 @@ class TodoController {
       const data = await todoService.getAllTodos();
       sendResponseSuccess(res, data);
     } catch (error) {
-      next(new CustomErrorHandler(StatusCodes.NOT_FOUND, 'Không tồn tại người dùng!'));
+      throw new CustomErrorHandler(StatusCodes.NOT_FOUND, 'Không l đc người dùng!');
     }
   }
 
   // Thêm mới todo
-  async addNewTodo(req: Request, res: Response, next: NextFunction) {
+  async addNewTodo(req: Request, res: Response) {
     try {
       const todoData = req.body;
       const data = await todoService.addNewTodo(todoData);
       sendResponseSuccess(res, data);
     } catch (error) {
-      next(new CustomErrorHandler(StatusCodes.NOT_FOUND, 'Không thêm được người dùng!'));
+      throw new CustomErrorHandler(StatusCodes.NOT_FOUND, 'Không thêm đc người dùng!');
     }
   }
 
   // Sửa thông tin todo
-  async updateTodo(req: Request, res: Response, next: NextFunction) {
-    try {
-      const todoId = req.params.id;
-      const todoData = req.body;
-      const data = await todoService.updateTodo(todoId, todoData);
-      sendResponseSuccess(res, data);
-    } catch (error) {
-      next(new CustomErrorHandler(StatusCodes.NOT_FOUND, 'Không Sửa người dùng!'));
-    }
-  }
+  
 
   // Xóa todo
-  async deleteTodo(req: Request, res: Response, next: NextFunction) {
+  async deleteTodo(req: Request, res: Response) {
     try {
       const todoId = req.params.id;
       await todoService.deleteTodo(todoId);
       sendResponseSuccess(res, { message: 'Xóa todo thành công', data: {} });
     } catch (error) {
-      next(new CustomErrorHandler(StatusCodes.NOT_FOUND, 'Không Xóa đc người dùng!'));
+      throw new CustomErrorHandler(StatusCodes.NOT_FOUND, 'Không Xóa đc người dùng!');
+    }
+    
+  }
+  async TodoDetail(req: Request, res: Response) {
+    try {
+      const todoId = req.params.id;
+      const data = await todoService.TodoDetail(todoId);
+      sendResponseSuccess(res, data);
+    } catch (error) {
+      throw new CustomErrorHandler(StatusCodes.NOT_FOUND, 'Không Tìm được chi tiết người dùng!');
     }
   }
   

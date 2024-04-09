@@ -6,7 +6,7 @@ import { CustomErrorHandler } from '../utils/ErrorHandling'
 
 class userController {
   // Lấy thông tin người dùng
-  async getProfile(req: Request, res: Response, next: NextFunction) {
+  async getProfile(req: Request, res: Response) {
     if (req.user) {
       const { user_id } = req.user
 

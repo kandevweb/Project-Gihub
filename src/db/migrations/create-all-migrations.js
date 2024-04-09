@@ -23,7 +23,6 @@ module.exports = {
     await UserMigration.down(queryInterface, Sequelize)
     // Role
     await RoleMigration.down(queryInterface, Sequelize)
-
     // Todo
     await TodoMigration.down(queryInterface, Sequelize)
   }
