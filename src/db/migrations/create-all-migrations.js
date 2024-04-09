@@ -5,7 +5,12 @@ const RoleMigration = require('./create-table-role')
 
 const UserMigration = require('./create-table-user')
 
+const CategoriesMigration = require('./create-table-categorie')
+
+const DirectorsMigration = require('./create-table-directors')
+
 const GenderMigration = require('./create-table-gender')
+
 
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -13,6 +18,13 @@ module.exports = {
     await RoleMigration.up(queryInterface, Sequelize)
     // User
     await UserMigration.up(queryInterface, Sequelize)
+    // Categories
+    await CategoriesMigration.up(queryInterface, Sequelize)
+  },
+
+  async down(queryInterface, Sequelize) {
+    // Categories
+    await CategoriesMigration.down(queryInterface, Sequelize)
     // Gender
     await GenderMigration.up(queryInterface, Sequelize)
   },
