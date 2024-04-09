@@ -4,7 +4,8 @@ const V2 = '/api/v2'
 const API_V1 = {
   common: `${V1}`,
   role: `${V1}/role`,
-  user: `${V1}/user`
+  user: `${V1}/user`,
+  gender: `${V1}/gender`
 }
 
 const API_V2 = {
