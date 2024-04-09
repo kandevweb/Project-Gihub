@@ -1,6 +1,7 @@
 import User from './User'
 import Role from './Role'
 import Categories from './Categorie'
+import Gender from './Gender'
 
 // Role Relationships
 const roleRelationships = () => {
@@ -25,6 +26,6 @@ export const setupModelRelationships = () => {
   userRelationships()
 }
 
-const models = { Role, User, Categories }
+const models = { Role, User, Gender, Categories }
 
 export default models
