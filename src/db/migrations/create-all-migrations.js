@@ -5,14 +5,15 @@ const RoleMigration = require('./create-table-role')
 
 const UserMigration = require('./create-table-user')
 
-
-const ImageMigration = require('./create-table-images')
+const ImageMigration = require('./create-table-image')
 
 const TodoMigration = require('./create-table-todo')
 
-const CategoriesMigration = require('./create-table-categorie')
+const CategoriesMigration = require('./create-table-category')
 
 const GenderMigration = require('./create-table-gender')
+
+const PostMigration = require('./create-table-post')
 
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -20,19 +21,21 @@ module.exports = {
     await RoleMigration.up(queryInterface, Sequelize)
     // User
     await UserMigration.up(queryInterface, Sequelize)
-
     // Image
     await ImageMigration.up(queryInterface, Sequelize)
-
     // Todo
     await TodoMigration.up(queryInterface, Sequelize)
     // Category
     await CategoriesMigration.up(queryInterface, Sequelize)
     // Gender
     await GenderMigration.up(queryInterface, Sequelize)
+    // Post
+    await PostMigration.up(queryInterface, Sequelize)
   },
 
   async down(queryInterface, Sequelize) {
+    // Post
+    await PostMigration.down(queryInterface, Sequelize)
     // Gender
     await GenderMigration.down(queryInterface, Sequelize)
     // Category

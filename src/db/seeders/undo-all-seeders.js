@@ -7,6 +7,9 @@ module.exports = {
     await queryInterface.bulkDelete('Roles', null, {})
     await queryInterface.bulkDelete('Users', null, {})
     await queryInterface.bulkDelete('Todos', null, {})
+    await queryInterface.bulkDelete('Categories', null, {})
     await queryInterface.bulkDelete('Genders', null, {})
+    await queryInterface.bulkDelete('Images', null, {})
+    await queryInterface.bulkDelete('Posts', null, {})
   }
 }

@@ -2,8 +2,9 @@ import User from './User'
 import Role from './Role'
 import Image from './Image'
 import Todo from './Todo'
-import Categories from './Categorie'
+import Categories from './Categories'
 import Gender from './Gender'
+import Post from './Post'
 
 // Role Relationships
 const roleRelationships = () => {
@@ -20,6 +21,11 @@ const userRelationships = () => {
     foreignKey: 'role_id',
     as: 'role_data'
   })
+
+  User.hasMany(Post, {
+    foreignKey: 'user_id',
+    as: 'post_data'
+  })
 }
 
 // Todo Relationships
@@ -31,12 +37,22 @@ const todoRelationships = () => {
   })
 }
 
+// Post Relationships
+const postRelationships = () => {
+  Post.belongsTo(User, {
+    targetKey: 'user_id',
+    foreignKey: 'user_id',
+    as: 'user_data'
+  })
+}
+
 export const setupModelRelationships = () => {
   roleRelationships()
   userRelationships()
   todoRelationships()
+  postRelationships()
 }
 
-const models = { Role, User, Gender, Categories, Todo, Image }
+const models = { Role, User, Gender, Categories, Todo, Image, Post }
 
 export default models
