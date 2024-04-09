@@ -15,13 +15,8 @@ module.exports = {
     await RoleMigration.up(queryInterface, Sequelize)
     // User
     await UserMigration.up(queryInterface, Sequelize)
-    // Categories
+    // Category
     await CategoriesMigration.up(queryInterface, Sequelize)
-  },
-
-  async down(queryInterface, Sequelize) {
-    // Categories
-    await CategoriesMigration.down(queryInterface, Sequelize)
     // Gender
     await GenderMigration.up(queryInterface, Sequelize)
   },
@@ -29,6 +24,8 @@ module.exports = {
   async down(queryInterface, Sequelize) {
     // Gender
     await GenderMigration.down(queryInterface, Sequelize)
+    // Category
+    await CategoriesMigration.down(queryInterface, Sequelize)
     // User
     await UserMigration.down(queryInterface, Sequelize)
     // Role

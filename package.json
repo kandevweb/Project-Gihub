@@ -9,9 +9,9 @@
     "start": "ts-node src/server.ts",
     "server": "nodemon src/server.ts",
     "undo:all-migrations": "npx sequelize-cli db:migrate:undo --name create-all-migrations",
-    "create:db": "npx sequelize-cli db:migrate --to create-all-migrations.js --debug",
+    "create:db": "npx sequelize-cli db:migrate --to create-all-migrations.js",
     "undo:all-senders": "npx sequelize-cli db:seed:undo --seed undo-all-seeders.js",
-    "seed:db": "yarn undo:all-senders && npx sequelize-cli db:seed --seed run-all-seeders.js --debug"
+    "seed:db": "yarn undo:all-senders && npx sequelize-cli db:seed --seed run-all-seeders.js"
   },
   "keywords": [],
   "author": "",

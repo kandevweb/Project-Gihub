@@ -10,7 +10,8 @@ export interface CategoriesAttributes {
   updatedAt: Date
 }
 
-interface CategoriesCreationAttributes extends Optional<CategoriesAttributes, 'category_id' | 'createdAt' | 'updatedAt'> {}
+interface CategoriesCreationAttributes
+  extends Optional<CategoriesAttributes, 'category_id' | 'createdAt' | 'updatedAt'> {}
 
 class Categories extends Model<CategoriesAttributes, CategoriesCreationAttributes> implements CategoriesAttributes {
   declare category_id: string
