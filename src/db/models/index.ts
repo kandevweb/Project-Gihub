@@ -1,5 +1,6 @@
 import User from './User'
 import Role from './Role'
+import Image from './Image'
 
 // Role Relationships
 const roleRelationships = () => {
@@ -23,6 +24,6 @@ export const setupModelRelationships = () => {
   userRelationships()
 }
 
-const models = { Role, User }
+const models = { Role, User, Image }
 
 export default models
