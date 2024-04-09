@@ -60,7 +60,7 @@ class imageService {
     })
 
     return {
-      message: 'Cap nhap hinh anh thanh cong.',
+      message: 'Cập nhật hình ảnh thành công.',
       data: imageToUpdate
     }
   }

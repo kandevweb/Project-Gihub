@@ -26,7 +26,7 @@ class imageController {
     sendResponseSuccess(res, data)
   }
 
-  // update image
+  // update image nha
   async updateImage(req: Request, res: Response) {
     const { id } = req.params
     const imageData: ImageInput = req.body
