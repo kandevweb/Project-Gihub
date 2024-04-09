@@ -1,5 +1,6 @@
 import User from './User'
 import Role from './Role'
+import Image from './Image'
 import Todo from './Todo'
 import Categories from './Categorie'
 import Gender from './Gender'
@@ -36,6 +37,6 @@ export const setupModelRelationships = () => {
   todoRelationships()
 }
 
-const models = { Role, User, Gender, Categories, Todo }
+const models = { Role, User, Gender, Categories, Todo, Image }
 
 export default models
