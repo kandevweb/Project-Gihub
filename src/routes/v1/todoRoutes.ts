@@ -1,15 +1,12 @@
-import { Router } from 'express';
-import TodoValidator from '../../middleware/validators/TodoValidator';
-import TodoController from '../../controllers/todoController';
-import Middleware from '../../middleware';
-import { tryCatch } from '../../utils/response';
+import { Router } from 'express'
+import TodoValidator from '../../middleware/validators/TodoValidator'
+import TodoController from '../../controllers/todoController'
+import Middleware from '../../middleware'
+import { tryCatch } from '../../utils/response'
 
-const router = Router();
+const router = Router()
 
-router.get('/list', 
-Middleware.handleValidatorError,
-Middleware.verifyToken,
-tryCatch(TodoController.getAllTodos));
+router.get('/list', Middleware.handleValidatorError, Middleware.verifyToken, tryCatch(TodoController.getAllTodos))
 
 router.post(
   '/add',
@@ -17,21 +14,20 @@ router.post(
   Middleware.handleValidatorError,
   Middleware.verifyToken,
   tryCatch(TodoController.addNewTodo)
-);
-
-
+)
 
 router.delete(
-  '/delete/:id',
+  '/delete/:todoId',
   Middleware.handleValidatorError,
   Middleware.verifyToken,
   tryCatch(TodoController.deleteTodo)
-);
+)
+
 router.get(
-  '/detail/:id',
+  '/detail/:todoId',
   Middleware.handleValidatorError,
   Middleware.verifyToken,
   tryCatch(TodoController.TodoDetail)
 )
 
-export default router;
+export default router

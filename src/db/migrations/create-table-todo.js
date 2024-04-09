@@ -22,11 +22,11 @@ module.exports = {
         type: Sequelize.BOOLEAN
       },
       user_id: {
-        allowNull: true,
+        allowNull: false,
         type: Sequelize.STRING,
         references: {
-          model: 'Users', // Tên của bảng mà khóa ngoại liên kết đến
-          key: 'user_id' // Tên của cột trong bảng mà khóa ngoại liên kết đến
+          model: 'Users',
+          key: 'user_id'
         }
       },
       createdAt: {

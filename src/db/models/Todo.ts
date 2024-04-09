@@ -5,25 +5,24 @@ import { DataTypes, Model, Optional } from 'sequelize'
 export interface TodoAttributes {
   todo_id: string
   todo_name: string
-  description: Text
+  description: string
   completed: boolean
   user_id: string
   createdAt: Date
   updatedAt: Date
 }
 
-interface TodoCreationAttributes extends Optional<TodoAttributes, 'todo_id' | 'user_id'|'createdAt'|'updatedAt'> {}
+interface TodoCreationAttributes
+  extends Optional<TodoAttributes, 'todo_id' | 'completed' | 'createdAt' | 'updatedAt'> {}
 
 class Todo extends Model<TodoAttributes, TodoCreationAttributes> implements TodoAttributes {
   declare todo_id: string
   declare todo_name: string
-  declare description: Text
+  declare description: string
   declare completed: boolean
-  declare  user_id: string
+  declare user_id: string
   declare readonly createdAt: Date
   declare readonly updatedAt: Date
-
-
 }
 
 Todo.init(
@@ -44,7 +43,8 @@ Todo.init(
     },
     completed: {
       allowNull: true,
-      type: DataTypes.BOOLEAN
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     },
     user_id: {
       allowNull: true,
@@ -58,7 +58,6 @@ Todo.init(
       allowNull: true,
       type: DataTypes.DATE
     }
-    
   },
   {
     timestamps: true,

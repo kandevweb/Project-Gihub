@@ -6,19 +6,19 @@ module.exports = {
       'Todos',
       [
         {
-          todo_id: '474d-bd1e-1d775e75fjpe',
+          todo_id: 'pa012c73-f703-4b16-847d-f61bae059102',
           todo_name: 'Học React',
-          description: '1',
-          completed: 'Hoàn thành',
+          description: 'Kiến thức reactjs cơ bản',
+          completed: false,
           user_id: 'lp322c73-f703-4b16-847d-f61bae053p9i'
         },
         {
-            todo_id: '475d-bd1e-1d775e75fjjj',
-            todo_name: 'Làm dự án',
-            description: '1',
-            completed: 'Chưa hoàn thành',
-            user_id: 'afa22c73-f703-4b16-847d-f61bae0534b2'
-          }
+          todo_id: 'x23la2c73-f703-4b16-847d-f61bae05mp0t',
+          todo_name: 'Làm dự án',
+          description: 'Làm dự án tốt nghiệp khóa 18.2',
+          completed: false,
+          user_id: 'afa22c73-f703-4b16-847d-f61bae0534b2'
+        }
       ],
       {}
     )

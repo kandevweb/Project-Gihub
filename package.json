@@ -8,8 +8,10 @@
     "production": "yarn build && node dist/server.js",
     "start": "ts-node src/server.ts",
     "server": "nodemon src/server.ts",
+    "insert:db": "npx sequelize-cli db:create",
+    "drop:db": "npx sequelize-cli db:drop",
     "undo:all-migrations": "npx sequelize-cli db:migrate:undo --name create-all-migrations",
-    "create:db": "npx sequelize-cli db:migrate --to create-all-migrations.js",
+    "create:db": "yarn drop:db && yarn insert:db && npx sequelize-cli db:migrate --to create-all-migrations.js",
     "undo:all-senders": "npx sequelize-cli db:seed:undo --seed undo-all-seeders.js",
     "seed:db": "yarn undo:all-senders && npx sequelize-cli db:seed --seed run-all-seeders.js"
   },
