@@ -7,10 +7,7 @@ const UserMigration = require('./create-table-user')
 
 const CategoriesMigration = require('./create-table-categorie')
 
-const DirectorsMigration = require('./create-table-directors')
-
 const GenderMigration = require('./create-table-gender')
-
 
 module.exports = {
   async up(queryInterface, Sequelize) {
