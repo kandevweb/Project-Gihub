@@ -6,6 +6,7 @@ const API_V1 = {
   role: `${V1}/role`,
   user: `${V1}/user`,
   category: `${V1}/category`
+  gender: `${V1}/gender`
 }
 
 const API_V2 = {
