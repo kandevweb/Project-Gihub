@@ -5,12 +5,17 @@ const RoleMigration = require('./create-table-role')
 
 const UserMigration = require('./create-table-user')
 
+
+const TodoMigration = require('./create-table-todo')
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     // Role
     await RoleMigration.up(queryInterface, Sequelize)
     // User
     await UserMigration.up(queryInterface, Sequelize)
+    // Todo
+    await TodoMigration.up(queryInterface, Sequelize)
   },
 
   async down(queryInterface, Sequelize) {
@@ -18,5 +23,8 @@ module.exports = {
     await UserMigration.down(queryInterface, Sequelize)
     // Role
     await RoleMigration.down(queryInterface, Sequelize)
+
+    // Todo
+    await TodoMigration.down(queryInterface, Sequelize)
   }
 }

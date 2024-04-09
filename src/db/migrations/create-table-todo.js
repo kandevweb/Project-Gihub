@@ -23,7 +23,21 @@ module.exports = {
       },
       user_id: {
         allowNull: true,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        references: {
+          model: 'Users', // Tên của bảng mà khóa ngoại liên kết đến
+          key: 'user_id' // Tên của cột trong bảng mà khóa ngoại liên kết đến
+        }
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       }
     })
   },
