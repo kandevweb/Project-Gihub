@@ -1,6 +1,10 @@
 import User from './User';
 import Role from './Role';
 import Todo from './Todo';
+import User from './User'
+import Role from './Role'
+import Categories from './Categorie'
+import Gender from './Gender'
 
 // Role Relationships
 const roleRelationships = () => {
@@ -28,8 +32,6 @@ const todoRelationships = () => {
   });
 };
 
-// Cast Relationships
-
 
 export const setupModelRelationships = () => {
   roleRelationships();
@@ -38,6 +40,6 @@ export const setupModelRelationships = () => {
   
 };
 
-const models = { Role, User, Todo };
+const models = { Role, User, Gender, Categories, Todo }
 
 export default models;
