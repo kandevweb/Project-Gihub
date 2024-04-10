@@ -9,7 +9,7 @@ module.exports = {
           director_id: 'dsw8d4a3-1a97-474d-bd1e-1d775e75fjpe',
           fullname: 'Sex',
           gender_id: 'qwe8d4a3-1a97-474d-bd1e-1d775e75fjpe',
-          nationality: 'việt nam',
+          nationality: 'việt nam1',
           birth_day: '2002/10/1',
           biography: 'đẹp trai'
         },

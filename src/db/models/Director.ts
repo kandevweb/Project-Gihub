@@ -72,5 +72,5 @@ Directors.init(
     tableName: 'Directors'
   }
 )
-
+//hihi
 export default Directors

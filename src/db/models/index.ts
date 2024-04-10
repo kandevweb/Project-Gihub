@@ -37,7 +37,7 @@ const todoRelationships = () => {
     as: 'user_data'
   })
 }
-// Directors Relationships
+// Directors Relationshipss
 const directorsRelationships = () => {
   Directors.belongsTo(Gender, {
     targetKey: 'gender_id',

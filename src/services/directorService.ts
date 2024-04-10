@@ -33,7 +33,7 @@ class directorsSevrice {
       throw new CustomErrorHandler(StatusCodes.CONFLICT, 'Directors này đã tồn tại!')
     }
 
-    return { message: 'Thêm mới directors thành công', data: newDirectors }
+    return { message: ' Đã thêm mới directors thành công', data: newDirectors }
   }
 }
 

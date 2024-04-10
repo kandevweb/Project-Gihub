@@ -1,6 +1,7 @@
 'use strict'
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
+  //hihi
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Directors', {
       director_id: {
