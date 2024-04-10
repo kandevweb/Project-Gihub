@@ -8,6 +8,7 @@ const API_V1 = {
   image: `${V1}/image`,
   todo: `${V1}/todo`,
   category: `${V1}/category`,
+  directors: `${V1}/directors`,
   gender: `${V1}/gender`,
   post: `${V1}/post`
 }

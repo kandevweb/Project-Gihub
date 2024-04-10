@@ -3,6 +3,7 @@ import Role from './Role'
 import Image from './Image'
 import Todo from './Todo'
 import Categories from './Categories'
+import Directors from './Director'
 import Gender from './Gender'
 import Post from './Post'
 
@@ -36,6 +37,14 @@ const todoRelationships = () => {
     as: 'user_data'
   })
 }
+// Directors Relationships
+const directorsRelationships = () => {
+  Directors.belongsTo(Gender, {
+    targetKey: 'gender_id',
+    foreignKey: 'gender_id',
+    as: 'gender_data'
+  })
+}
 
 // Post Relationships
 const postRelationships = () => {
@@ -51,8 +60,9 @@ export const setupModelRelationships = () => {
   userRelationships()
   todoRelationships()
   postRelationships()
+  directorsRelationships()
 }
 
-const models = { Role, User, Gender, Categories, Todo, Image, Post }
+const models = { Role, User, Gender, Categories, Directors, Todo, Image, Post }
 
 export default models

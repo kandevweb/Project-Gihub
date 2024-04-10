@@ -11,6 +11,8 @@ const TodoMigration = require('./create-table-todo')
 
 const CategoriesMigration = require('./create-table-category')
 
+const DirectorsMigration = require('./create-table-director')
+
 const GenderMigration = require('./create-table-gender')
 
 const PostMigration = require('./create-table-post')
@@ -27,6 +29,8 @@ module.exports = {
     await TodoMigration.up(queryInterface, Sequelize)
     // Category
     await CategoriesMigration.up(queryInterface, Sequelize)
+    // Directors
+    await DirectorsMigration.up(queryInterface, Sequelize)
     // Gender
     await GenderMigration.up(queryInterface, Sequelize)
     // Post
@@ -40,6 +44,8 @@ module.exports = {
     await GenderMigration.down(queryInterface, Sequelize)
     // Category
     await CategoriesMigration.down(queryInterface, Sequelize)
+    // Directors
+    await DirectorsMigration.down(queryInterface, Sequelize)
     // User
     await UserMigration.down(queryInterface, Sequelize)
     // Role
