@@ -6,7 +6,7 @@ module.exports = {
       'Directors',
       [
         {
-          director_id: 'dsw8d4a3-1a97-474d-bd1e-1d775e75fjpe',
+          director_id: 'kha8d4a3-1a97-474d-bd1e-1d775e75fjpe',
           fullname: 'Sex',
           gender_id: 'qwe8d4a3-1a97-474d-bd1e-1d775e75fjpe',
           nationality: 'việt nam1',
@@ -14,7 +14,7 @@ module.exports = {
           biography: 'đẹp trai'
         },
         {
-          director_id: 'sde8d4a3-1a97-474d-bd1e-1d775e75fhy8',
+          director_id: 'bbt8d4a3-1a97-474d-bd1e-1d775e75fhy8',
           fullname: 'hành động',
           gender_id: 'rty8d4a3-1a97-474d-bd1e-1d775e75fjpe',
           nationality: 'thái lan',
@@ -22,7 +22,7 @@ module.exports = {
           biography: 'to khỏe'
         },
         {
-          director_id: 'usr8d4a3-1a97-474d-bd1e-1d775e75fp0a',
+          director_id: 'hkt8d4a3-1a97-474d-bd1e-1d775e75fp0a',
           fullname: '2 người',
           gender_id: 'uio8d4a3-1a97-474d-bd1e-1d775e75fjpe',
           nationality: 'mỹ',
