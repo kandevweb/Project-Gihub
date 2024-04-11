@@ -2,7 +2,8 @@ import User from './User'
 import Role from './Role'
 import Image from './Image'
 import Todo from './Todo'
-import Categories from './Categories'
+import Category from './Category'
+import Director from './Director'
 import Gender from './Gender'
 import Post from './Post'
 
@@ -36,6 +37,21 @@ const todoRelationships = () => {
     as: 'user_data'
   })
 }
+/// Directors Relationshipss
+const directorsRelationships = () => {
+  Director.belongsTo(Gender, {
+    targetKey: 'gender_id',
+    foreignKey: 'gender_id',
+    as: 'gender_data'
+  })
+}
+/// Gender Relationshipss
+const genderRelationships = () => {
+  Gender.hasMany(Director, {
+    foreignKey: 'gender_id',
+    as: 'director_data'
+  })
+}
 
 // Post Relationships
 const postRelationships = () => {
@@ -51,8 +67,10 @@ export const setupModelRelationships = () => {
   userRelationships()
   todoRelationships()
   postRelationships()
+  directorsRelationships()
+  genderRelationships()
 }
 
-const models = { Role, User, Gender, Categories, Todo, Image, Post }
+const models = { Role, User, Gender, Category, Director, Todo, Image, Post }
 
 export default models

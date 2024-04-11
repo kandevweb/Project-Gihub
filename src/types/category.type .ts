@@ -1,4 +1,4 @@
-import { CategoriesAttributes } from '../db/models/Categories'
+import { CategoriesAttributes } from '../db/models/Category'
 
 export interface Category extends CategoriesAttributes {}
 
