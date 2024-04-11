@@ -8,6 +8,7 @@ const TodoSeeder = require('./todo-seeder')
 const CategorySeeder = require('./category-seeder')
 const GenderSeeder = require('./gender-seeder')
 const PostSeeder = require('./post-seeder')
+const ProfileSeeder = require('./profile-seeder')
 
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -18,6 +19,7 @@ module.exports = {
     await CategorySeeder.up(queryInterface, Sequelize)
     await GenderSeeder.up(queryInterface, Sequelize)
     await PostSeeder.up(queryInterface, Sequelize)
+    await ProfileSeeder.up(queryInterface, Sequelize)
   },
 
   async down(queryInterface, Sequelize) {}

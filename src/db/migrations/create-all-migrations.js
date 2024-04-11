@@ -15,6 +15,8 @@ const GenderMigration = require('./create-table-gender')
 
 const PostMigration = require('./create-table-post')
 
+const ProfileMigration = require('./create-table-profile')
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     // Role
@@ -31,6 +33,8 @@ module.exports = {
     await GenderMigration.up(queryInterface, Sequelize)
     // Post
     await PostMigration.up(queryInterface, Sequelize)
+    // Profile
+    await ProfileMigration.up(queryInterface, Sequelize)
   },
 
   async down(queryInterface, Sequelize) {
@@ -50,5 +54,8 @@ module.exports = {
 
     // Todo
     await TodoMigration.down(queryInterface, Sequelize)
+
+    // Profile
+    await ProfileMigration.down(queryInterface, Sequelize)
   }
 }

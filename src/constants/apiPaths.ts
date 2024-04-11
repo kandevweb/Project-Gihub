@@ -9,7 +9,8 @@ const API_V1 = {
   todo: `${V1}/todo`,
   category: `${V1}/category`,
   gender: `${V1}/gender`,
-  post: `${V1}/post`
+  post: `${V1}/post`,
+  profile: `${V1}/profile`
 }
 
 const API_V2 = {
