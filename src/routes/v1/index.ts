@@ -7,6 +7,7 @@ import todoRoutes from './todoRoutes'
 import categoryRoutes from './categorieRoutes'
 import genderRoutes from './genderRouter'
 import postRoutes from './postRoutes'
+import castRoutes from './castRoutes'
 import { API_V1 } from '../../constants/apiPaths'
 
 const router = Router()
@@ -19,5 +20,6 @@ router.use(API_V1.todo, todoRoutes)
 router.use(API_V1.category, categoryRoutes)
 router.use(API_V1.gender, genderRoutes)
 router.use(API_V1.post, postRoutes)
+router.use(API_V1.cast, castRoutes)
 
 export default router

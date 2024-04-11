@@ -15,6 +15,9 @@ const GenderMigration = require('./create-table-gender')
 
 const PostMigration = require('./create-table-post')
 
+const CastMigration = require('./create-table-cast')
+
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     // Role
@@ -31,6 +34,8 @@ module.exports = {
     await GenderMigration.up(queryInterface, Sequelize)
     // Post
     await PostMigration.up(queryInterface, Sequelize)
+    // Cast
+    await CastMigration.up(queryInterface, Sequelize)
   },
 
   async down(queryInterface, Sequelize) {
@@ -50,5 +55,7 @@ module.exports = {
 
     // Todo
     await TodoMigration.down(queryInterface, Sequelize)
+     // Cast
+     await CastMigration.down(queryInterface, Sequelize)
   }
 }

@@ -13,7 +13,7 @@ export interface TodoAttributes {
 }
 
 interface TodoCreationAttributes
-  extends Optional<TodoAttributes, 'todo_id' | 'completed' | 'createdAt' | 'updatedAt'> {}
+  extends Optional<TodoAttributes, 'todo_id' |'completed'| 'createdAt' | 'updatedAt'> {}
 
 class Todo extends Model<TodoAttributes, TodoCreationAttributes> implements TodoAttributes {
   declare todo_id: string
