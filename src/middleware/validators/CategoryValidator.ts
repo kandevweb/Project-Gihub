@@ -1,8 +1,8 @@
 import { body } from 'express-validator'
 
-class CategorieValidator {
-  checkAddCategories() {
+class CategoryValidator {
+  checkAddCategory() {
     return [body('category_name').notEmpty().withMessage('Categories không được để trống!').trim()]
   }
 }
-export default new CategorieValidator()
+export default new CategoryValidator()

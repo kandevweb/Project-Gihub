@@ -4,7 +4,8 @@ import commonRoutes from './commonRoutes'
 import userRoutes from './userRoutes'
 import imageRoutes from './imageRoutes'
 import todoRoutes from './todoRoutes'
-import categoryRoutes from './categorieRoutes'
+import categoryRoutes from './categoryRoutes'
+import directorRoutes from './directorRoutes'
 import genderRoutes from './genderRouter'
 import postRoutes from './postRoutes'
 import { API_V1 } from '../../constants/apiPaths'
@@ -17,6 +18,7 @@ router.use(API_V1.user, userRoutes)
 router.use(API_V1.image, imageRoutes)
 router.use(API_V1.todo, todoRoutes)
 router.use(API_V1.category, categoryRoutes)
+router.use(API_V1.director, directorRoutes)
 router.use(API_V1.gender, genderRoutes)
 router.use(API_V1.post, postRoutes)
 

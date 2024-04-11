@@ -1,16 +1,16 @@
 import { Router } from 'express'
 import { tryCatch } from '../../utils/response'
-import categorieController from '../../controllers/categorie.controller'
+import categoryController from '../../controllers/categoryController'
 import CategoryValidator from '../../middleware/validators/CategoryValidator'
 import Middleware from '../../middleware'
 
 const router = Router()
-router.get('/list', tryCatch(categorieController.fetchAllCategorie))
+router.get('/list', tryCatch(categoryController.fetchAllCategory))
 router.post(
   '/add',
-  CategoryValidator.checkAddCategories(),
+  CategoryValidator.checkAddCategory(),
   Middleware.handleValidatorError,
-  tryCatch(categorieController.addNewCategories)
+  tryCatch(categoryController.addNewCategory)
 )
 
 export default router
