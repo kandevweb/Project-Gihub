@@ -1,6 +1,6 @@
 import { StatusCodes } from 'http-status-codes'
 import models from '../db/models'
-import { DirectorInput } from '../types/director.type'
+import { DirectorInput, DirectorUpdate } from '../types/director.type'
 import { CustomErrorHandler } from '../utils/ErrorHandling'
 
 class directorSevrice {
@@ -33,6 +33,41 @@ class directorSevrice {
     }
 
     return { message: ' Đã thêm mới directors thành công', data: newDirector }
+  }
+  // Cập nhật Director
+  async updateDirector(director_id: string, data: DirectorUpdate) {
+    const director = await models.Director.findByPk(director_id)
+
+    if (!director) {
+      throw new CustomErrorHandler(StatusCodes.NOT_FOUND, 'Director không tồn tại!')
+    }
+
+    await director.update(data)
+
+    return {
+      message: 'Cập nhật Category thành công',
+      data: {
+        post: director
+      }
+    }
+  }
+
+  // Xóa director
+  async deleteDirector(director_id: string) {
+    const director = await models.Director.findByPk(director_id)
+
+    if (!director) {
+      throw new CustomErrorHandler(StatusCodes.NOT_FOUND, 'Director không tồn tại!')
+    }
+
+    await director.destroy()
+
+    return {
+      message: 'Xóa Director thành công',
+      data: {
+        director
+      }
+    }
   }
 }
 
