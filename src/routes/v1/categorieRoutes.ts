@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { tryCatch } from '../../utils/response'
-import categorieController from '../../controllers/categorie.controller'
+import categorieController from '../../controllers/categorieController'
 import CategoryValidator from '../../middleware/validators/CategoryValidator'
 import Middleware from '../../middleware'
 

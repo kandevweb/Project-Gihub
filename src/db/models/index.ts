@@ -2,7 +2,7 @@ import User from './User'
 import Role from './Role'
 import Image from './Image'
 import Todo from './Todo'
-import Categories from './Categories'
+import Categories from './Category'
 import Directors from './Director'
 import Gender from './Gender'
 import Post from './Post'
@@ -37,7 +37,7 @@ const todoRelationships = () => {
     as: 'user_data'
   })
 }
-// Directors Relationshipss
+/// Directors Relationshipss
 const directorsRelationships = () => {
   Directors.belongsTo(Gender, {
     targetKey: 'gender_id',

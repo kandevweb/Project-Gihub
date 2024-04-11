@@ -28,7 +28,6 @@ class directorsSevrice {
         biography
       }
     })
-
     if (!created) {
       throw new CustomErrorHandler(StatusCodes.CONFLICT, 'Directors này đã tồn tại!')
     }

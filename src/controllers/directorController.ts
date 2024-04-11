@@ -4,7 +4,7 @@ import directorsService from '../services/directorService'
 import { sendResponseSuccess } from '../utils/response'
 import { DirectorsInput } from '../types/director.type'
 
-class directorsController {
+class directorController {
   async fetchAllDirectors(req: Request, res: Response) {
     const data = await directorsService.fetchAllDirectors()
 
@@ -17,4 +17,4 @@ class directorsController {
     sendResponseSuccess(res, data)
   }
 }
-export default new directorsController()
+export default new directorController()

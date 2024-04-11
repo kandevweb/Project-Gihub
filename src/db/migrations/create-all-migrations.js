@@ -29,7 +29,7 @@ module.exports = {
     await TodoMigration.up(queryInterface, Sequelize)
     // Category
     await CategoriesMigration.up(queryInterface, Sequelize)
-    // Directors
+    //// Directors
     await DirectorsMigration.up(queryInterface, Sequelize)
     // Gender
     await GenderMigration.up(queryInterface, Sequelize)
@@ -44,7 +44,7 @@ module.exports = {
     await GenderMigration.down(queryInterface, Sequelize)
     // Category
     await CategoriesMigration.down(queryInterface, Sequelize)
-    // Directors
+    //// Directors
     await DirectorsMigration.down(queryInterface, Sequelize)
     // User
     await UserMigration.down(queryInterface, Sequelize)

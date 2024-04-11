@@ -8,26 +8,26 @@ export interface DirectorsAttributes {
   gender_id: string
   nationality: string
   birth_day: Date
-  biography: Text
+  biography: string
   createdAt: Date
   updatedAt: Date
 }
 
 interface DirectorsCreationAttributes
-  extends Optional<DirectorsAttributes, 'director_id' | 'gender_id' | 'createdAt' | 'updatedAt'> {}
+  extends Optional<DirectorsAttributes, 'director_id' | 'createdAt' | 'updatedAt'> {}
 
-class Directors extends Model<DirectorsAttributes, DirectorsCreationAttributes> implements DirectorsAttributes {
+class Director extends Model<DirectorsAttributes, DirectorsCreationAttributes> implements DirectorsAttributes {
   declare director_id: string
   declare fullname: string
   declare gender_id: string
   declare nationality: string
   declare birth_day: Date
-  declare biography: Text
+  declare biography: string
   declare readonly createdAt: Date
   declare readonly updatedAt: Date
 }
 
-Directors.init(
+Director.init(
   {
     director_id: {
       allowNull: false,
@@ -53,7 +53,7 @@ Directors.init(
     },
     biography: {
       allowNull: true,
-      type: DataTypes.TEXT
+      type: DataTypes.STRING
     },
     createdAt: {
       allowNull: true,
@@ -68,9 +68,8 @@ Directors.init(
     timestamps: true,
     sequelize: db,
     underscored: false,
-    modelName: 'Directors',
+    modelName: 'Director',
     tableName: 'Directors'
   }
 )
-//hihi
-export default Directors
+export default Director
