@@ -9,6 +9,7 @@ const CategorySeeder = require('./category-seeder')
 const DirectorSeeder = require('./director-seeder')
 const GenderSeeder = require('./gender-seeder')
 const PostSeeder = require('./post-seeder')
+const ProductSeeder = require('./product-seeder')
 
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -20,6 +21,7 @@ module.exports = {
     await DirectorSeeder.up(queryInterface, Sequelize)
     await GenderSeeder.up(queryInterface, Sequelize)
     await PostSeeder.up(queryInterface, Sequelize)
+    await ProductSeeder.up(queryInterface, Sequelize)
   },
 
   async down(queryInterface, Sequelize) {}

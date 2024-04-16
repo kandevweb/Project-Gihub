@@ -17,6 +17,8 @@ const PostMigration = require('./create-table-post')
 
 const DirectorMigration = require('./create-table-director')
 
+const ProductMigration = require('./create-table-product')
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     // Role
@@ -35,9 +37,13 @@ module.exports = {
     await PostMigration.up(queryInterface, Sequelize)
     // Director
     await DirectorMigration.up(queryInterface, Sequelize)
+    // Product
+    await ProductMigration.up(queryInterface, Sequelize)
   },
 
   async down(queryInterface, Sequelize) {
+    // Product
+    await ProductMigration.down(queryInterface, Sequelize)
     // Post
     await PostMigration.down(queryInterface, Sequelize)
     // Gender

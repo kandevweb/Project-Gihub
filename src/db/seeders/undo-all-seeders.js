@@ -4,6 +4,7 @@ const { hashSync, genSaltSync } = require('bcryptjs')
 module.exports = {
   async up(queryInterface, Sequelize) {},
   async down(queryInterface, Sequelize) {
+    await queryInterface.bulkDelete('Products', null, {})
     await queryInterface.bulkDelete('Posts', null, {})
     await queryInterface.bulkDelete('Genders', null, {})
     await queryInterface.bulkDelete('Directors', null, {})

@@ -10,7 +10,8 @@ const API_V1 = {
   category: `${V1}/category`,
   director: `${V1}/director`,
   gender: `${V1}/gender`,
-  post: `${V1}/post`
+  post: `${V1}/post`,
+  product: `${V1}/product`
 }
 
 const API_V2 = {
