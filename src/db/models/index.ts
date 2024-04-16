@@ -6,6 +6,7 @@ import Category from './Category'
 import Director from './Director'
 import Gender from './Gender'
 import Post from './Post'
+import Product from './Product'
 
 // Role Relationships
 const roleRelationships = () => {
@@ -26,6 +27,11 @@ const userRelationships = () => {
   User.hasMany(Post, {
     foreignKey: 'user_id',
     as: 'post_data'
+  })
+
+  User.hasMany(Product, {
+    foreignKey: 'user_id',
+    as: 'product_data'
   })
 }
 
@@ -62,6 +68,14 @@ const postRelationships = () => {
   })
 }
 
+const productRelationships = () => {
+  Product.belongsTo(User, {
+    targetKey: 'user_id',
+    foreignKey: 'user_id',
+    as: 'user_data'
+  })
+}
+
 export const setupModelRelationships = () => {
   roleRelationships()
   userRelationships()
@@ -69,8 +83,9 @@ export const setupModelRelationships = () => {
   postRelationships()
   directorsRelationships()
   genderRelationships()
+  productRelationships()
 }
 
-const models = { Role, User, Gender, Category, Director, Todo, Image, Post }
+const models = { Role, User, Gender, Category, Director, Todo, Image, Post, Product }
 
 export default models

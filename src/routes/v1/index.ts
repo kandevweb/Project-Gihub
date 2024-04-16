@@ -8,6 +8,7 @@ import categoryRoutes from './categoryRoutes'
 import directorRoutes from './directorRoutes'
 import genderRoutes from './genderRouter'
 import postRoutes from './postRoutes'
+import productRoutes from './productRoutes'
 import { API_V1 } from '../../constants/apiPaths'
 
 const router = Router()
@@ -21,5 +22,6 @@ router.use(API_V1.category, categoryRoutes)
 router.use(API_V1.director, directorRoutes)
 router.use(API_V1.gender, genderRoutes)
 router.use(API_V1.post, postRoutes)
+router.use(API_V1.product, productRoutes)
 
 export default router
